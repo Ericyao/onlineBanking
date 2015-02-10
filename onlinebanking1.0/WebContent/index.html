@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>
+			Banking Online
+		</title>
+		<style type="text/css">
+/*<![CDATA[*/
+
+				body,td,th {
+
+								font-family: Verdana, Geneva, sans-serif;
+
+				}
+
+				body {
+
+								background-image: url(images/wall.jpg);
+
+								background-repeat: no-repeat;
+
+								margin-left: 0px;
+
+								margin-top: 0px;
+
+								margin-right: 0px;
+
+								margin-bottom: 0px;
+
+				}
+
+				.nowDiv {
+								margin:8cm 0cm 0.2cm 4cm; 
+								font-size: 130px;
+								color:  #FFFFFF;
+								font-weight:bold;
+				}
+
+				.Month {
+								margin:0cm 0cm 3cm 5cm; 
+								font-size: 60px;
+								color:  #FFFFFF;
+				}
+
+				/*]]>*/
+		</style>
+		<script type="text/javascript">
+//<![CDATA[
+				<!--
+				function MM_goToURL() { //v3.0
+				var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+				for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+				}
+				//-->
+				//]]>
+		</script>
+		<script type="text/javascript">
+//<![CDATA[
+
+
+				function show(){ 
+
+				var date = new Date(); //日期对象 
+
+				var now = ""; 
+
+				now = now + date.getHours()+":"; 
+
+				now = now + date.getMinutes()+":"; 
+
+				now = now + date.getSeconds()+""; 
+
+				document.getElementById("nowDiv").innerHTML = now; //div的html是now这个字符串 
+
+				var Month = ""; 
+
+				switch(date.getMonth()+1)
+				{
+				case 11:Month = Month + "November "
+				break
+				case 12:Month = Month +"December "
+				break
+				case 1:Month = Month + "January "
+				break
+				case 2:Month = Month + "February "
+				break
+				default:Month = Month + date.getMonth()+1+". "
+				break
+				}
+
+
+
+				Month = Month + date.getDate()+""; 
+
+
+				document.getElementById("Month").innerHTML = Month; //div的html是now这个字符串 
+
+
+				setTimeout("show()",1000); //设置过1000毫秒就是1秒，调用show方法 
+				}
+				//]]>
+		</script>
+	</head>
+	<body onload="show()">
+		<!-- 网页加载时调用一次 以后就自动调用了-->
+		<div class="nowDiv" id="nowDiv" onmouseover="MM_goToURL('parent','login.jsp');return document.MM_returnValue"></div>
+		<div class="Month" id="Month" onmouseover="MM_goToURL('parent','login.jsp');return document.MM_returnValue"></div>
+	</body>
+</html>
